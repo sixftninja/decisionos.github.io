@@ -190,6 +190,8 @@ function renderBlock(block: ContentBlock, i: number) {
 export default function VisionCarousel() {
   const [current, setCurrent] = useState(0);
   const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   const prev = useCallback(() => setCurrent((c) => Math.max(0, c - 1)), []);
   const next = useCallback(
@@ -215,8 +217,23 @@ export default function VisionCarousel() {
     return () => window.removeEventListener("keydown", handleKey);
   }, [next, prev]);
 
+  // Non-passive touchmove: lock to horizontal once intent is clear
+  useEffect(() => {
+    const el = carouselRef.current;
+    if (!el) return;
+    const onTouchMove = (e: TouchEvent) => {
+      if (touchStartX.current === null || touchStartY.current === null) return;
+      const dx = Math.abs(e.touches[0].clientX - touchStartX.current);
+      const dy = Math.abs(e.touches[0].clientY - touchStartY.current);
+      if (dx > dy && dx > 5) e.preventDefault();
+    };
+    el.addEventListener("touchmove", onTouchMove, { passive: false });
+    return () => el.removeEventListener("touchmove", onTouchMove);
+  }, []);
+
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
   };
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (touchStartX.current === null) return;
@@ -224,10 +241,11 @@ export default function VisionCarousel() {
     if (delta < -50) next();
     if (delta > 50) prev();
     touchStartX.current = null;
+    touchStartY.current = null;
   };
 
   return (
-    <section id="vision" className="md:snap-start border-t border-white/10">
+    <section id="vision" className="snap-start border-t border-white/10">
       {/* ── Sticky header — sticks at nav bottom (nav measured at 57px) ── */}
       <div className="sticky top-[57px] z-40 bg-black border-b border-white/10 px-6 py-4">
         <div className="max-w-5xl mx-auto">
@@ -242,6 +260,7 @@ export default function VisionCarousel() {
 
       {/* ── Carousel: mobile + desktop ── */}
       <div
+        ref={carouselRef}
         className="relative h-[calc(100svh-5rem)] md:h-[calc(100vh-5rem)]"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
@@ -284,21 +303,21 @@ export default function VisionCarousel() {
           </div>
         </div>
 
-        {/* ← Arrow — desktop only */}
+        {/* ← Arrow */}
         {current > 0 && (
           <button
             onClick={prev}
-            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center border border-white text-white hover:bg-white hover:text-black transition-colors duration-200 font-[family-name:var(--font-geist-mono)] text-lg"
+            className="flex absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 items-center justify-center border border-white/50 md:border-white text-white hover:bg-white hover:text-black transition-colors duration-200 font-[family-name:var(--font-geist-mono)] text-base md:text-lg"
             aria-label="Previous step"
           >
             ←
           </button>
         )}
-        {/* → Arrow — desktop only */}
+        {/* → Arrow */}
         {current < screens.length - 1 && (
           <button
             onClick={next}
-            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center border border-white text-white hover:bg-white hover:text-black transition-colors duration-200 font-[family-name:var(--font-geist-mono)] text-lg"
+            className="flex absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 items-center justify-center border border-white/50 md:border-white text-white hover:bg-white hover:text-black transition-colors duration-200 font-[family-name:var(--font-geist-mono)] text-base md:text-lg"
             aria-label="Next step"
           >
             →

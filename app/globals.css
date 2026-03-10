@@ -4,9 +4,11 @@
 
 html {
   scroll-behavior: smooth;
+  /* Mobile: proximity snap — snaps when near a boundary, doesn't force it */
+  scroll-snap-type: y proximity;
 }
 
-/* Snap scroll only on desktop — mobile browsers fight it with dynamic chrome */
+/* Desktop: mandatory snap — strict page-by-page */
 @media (min-width: 768px) {
   html {
     scroll-snap-type: y mandatory;

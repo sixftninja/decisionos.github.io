@@ -18,7 +18,7 @@ export default function Home() {
       {/* h-screen + snap-start = one full page snap point */}
       <section
         id="hero"
-        className="min-h-[100svh] md:h-screen md:snap-start md:overflow-hidden flex flex-col justify-center px-6 pt-20 pb-12 max-w-5xl mx-auto"
+        className="min-h-[100svh] md:h-screen snap-start md:overflow-hidden flex flex-col justify-center px-6 pt-20 pb-12 max-w-5xl mx-auto"
       >
         {/* Headline */}
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-5 md:mb-8 leading-tight">
@@ -64,7 +64,7 @@ export default function Home() {
       {/* ─── SECTION 4: CTA / CONTACT ─── */}
       <section
         id="contact"
-        className="min-h-[100svh] md:snap-start flex flex-col justify-center px-6 py-16 md:py-24 border-t border-white/10"
+        className="min-h-[100svh] snap-start flex flex-col justify-center px-6 py-16 md:py-24 border-t border-white/10"
       >
         <div className="max-w-5xl mx-auto w-full">
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight max-w-2xl">
