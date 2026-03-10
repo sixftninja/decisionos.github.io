@@ -14,14 +14,14 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "DecisionOS — The Last Enterprise Software You'll Need",
+  title: "Decision OS — The Last Enterprise Software You'll Need",
   description:
-    "DecisionOS extracts your company's intelligence from fragmented systems, unifies it, and makes it actionable. Replace your analytics stack with a single platform that truly understands your business.",
+    "Decision OS extracts the intelligence trapped in your systems, unifies it, and makes it actionable. Then helps you eliminate the SaaS tools you no longer need.",
   keywords: ["enterprise software", "business intelligence", "operational analytics", "decision support", "AI analytics"],
   openGraph: {
-    title: "DecisionOS — The Last Enterprise Software You'll Need",
+    title: "Decision OS — The Last Enterprise Software You'll Need",
     description:
-      "Extract, unify, and act on your company's intelligence. Then eliminate the systems you don't need.",
+      "Decision OS extracts the intelligence trapped in your systems, unifies it, and makes it actionable.",
     type: "website",
   },
 };
@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth snap-y snap-mandatory">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}
       >
