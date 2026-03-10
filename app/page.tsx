@@ -18,38 +18,37 @@ export default function Home() {
       {/* h-screen + snap-start = one full page snap point */}
       <section
         id="hero"
-        className="h-screen snap-start overflow-hidden flex flex-col justify-center px-6 pt-20 pb-12 max-w-5xl mx-auto"
+        className="min-h-[100svh] md:h-screen md:snap-start md:overflow-hidden flex flex-col justify-center px-6 pt-20 pb-12 max-w-5xl mx-auto"
       >
-        {/* Headline — largest, full white, bold */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-8 leading-tight">
+        {/* Headline */}
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-5 md:mb-8 leading-tight">
           You bought the software.
           <br />
           You never got the intelligence.
         </h1>
 
-        {/* Body copy — problem statement, comes first, muted but readable */}
-        <div className="border-l-2 border-white/15 pl-6 mb-8 space-y-2 max-w-2xl">
-          <p className="text-sm sm:text-base leading-relaxed text-white/60">
+        {/* Body copy — problem statement */}
+        <div className="border-l-2 border-white/15 pl-4 md:pl-6 mb-5 md:mb-8 space-y-2 max-w-2xl">
+          <p className="text-sm leading-relaxed text-white/60">
             CRM. ERP. Analytics. Project management.
             Each one promised clarity. Instead: fragmented data, buried intelligence, decisions made blind.
           </p>
-          <p className="text-sm sm:text-base leading-relaxed text-white/60">
+          <p className="text-sm leading-relaxed text-white/60">
             Your systems show what happened. Never why. Never what to do next.
           </p>
         </div>
 
-        {/* Subline — solution statement, comes after problem, smaller than headline */}
-        <p className="text-base sm:text-lg font-medium leading-snug mb-10 text-white">
-          Decision OS extracts the intelligence trapped in your systems, unifies it, and makes it actionable.{" "}
-          <br />
+        {/* Subline — solution */}
+        <p className="text-sm sm:text-base font-medium leading-relaxed mb-8 md:mb-10 text-white max-w-xl">
+          Decision OS extracts the intelligence trapped in your systems, unifies it, and makes it actionable.
           Then helps you eliminate the SaaS tools you no longer need.
         </p>
 
-        {/* CTA — always resets carousel to Tier 1 via hash navigation */}
+        {/* CTA */}
         <div>
           <a
             href="#vision"
-            className="inline-block border border-white/30 px-8 py-4 text-sm hover:bg-white hover:text-black transition-colors duration-200"
+            className="block sm:inline-block text-center border border-white/30 px-8 py-4 text-sm hover:bg-white hover:text-black transition-colors duration-200"
           >
             See How It Works ↓
           </a>
@@ -65,14 +64,14 @@ export default function Home() {
       {/* ─── SECTION 4: CTA / CONTACT ─── */}
       <section
         id="contact"
-        className="min-h-screen snap-start flex flex-col justify-center px-6 py-24 border-t border-white/10"
+        className="min-h-[100svh] md:snap-start flex flex-col justify-center px-6 py-16 md:py-24 border-t border-white/10"
       >
         <div className="max-w-5xl mx-auto w-full">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight max-w-2xl">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight max-w-2xl">
             Ready to see your business differently?
           </h2>
 
-          <div className="max-w-xl mb-16 space-y-4">
+          <div className="max-w-xl mb-8 md:mb-16 space-y-3 md:space-y-4">
             <p className="text-white/60 text-base leading-relaxed">
               Decision OS is in active consulting mode.
               The platform is being built engagement by engagement —
@@ -84,7 +83,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-16">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16">
             <div className="space-y-8">
               <div>
                 <p className="font-[family-name:var(--font-geist-mono)] text-xs text-white/30 uppercase tracking-widest mb-3">

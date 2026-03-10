@@ -149,8 +149,7 @@ export default function WorkCarousel() {
   };
 
   return (
-    // snap-start: this section is one vertical snap page
-    <section id="proof" className="snap-start border-t border-white/10">
+    <section id="proof" className="md:snap-start border-t border-white/10">
       {/* ── Sticky header ── */}
       <div className="sticky top-[57px] z-40 bg-black border-b border-white/10 px-6 py-4">
         <div className="max-w-5xl mx-auto">
@@ -163,52 +162,26 @@ export default function WorkCarousel() {
         </div>
       </div>
 
-      {/* ── MOBILE: vertical stack ── */}
-      <div className="md:hidden px-6 py-12 max-w-5xl mx-auto">
-        <div className="space-y-16">
-          {cases.map((c, i) => (
-            <div key={i}>
-              <div className="mb-6">
-                {c.badge && (
-                  <div className="mb-1">
-                    <span className="font-[family-name:var(--font-geist-mono)] text-xs border border-white/20 px-2 py-0.5 text-white/40">
-                      {c.badge}
-                    </span>
-                  </div>
-                )}
-                <h3 className="text-2xl font-semibold">{c.title}</h3>
-              </div>
-              <div className="space-y-4">
-                {c.blocks.map((block, j) => renderBlock(block, j))}
-              </div>
-              {i < cases.length - 1 && (
-                <div className="border-t border-white/5 mt-12" />
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* ── DESKTOP: horizontal carousel ── */}
+      {/* ── Carousel: mobile + desktop ── */}
       <div
-        className="hidden md:block relative h-[calc(100vh-5rem)]"
+        className="relative h-[calc(100svh-5rem)] md:h-[calc(100vh-5rem)]"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
         {/* Overflow-clipped sliding track */}
-        <div className="overflow-hidden h-[calc(100vh-5rem)]">
+        <div className="overflow-hidden h-full">
           <div
-            className="flex h-[calc(100vh-5rem)] transition-transform duration-500 ease-in-out"
+            className="flex h-full transition-transform duration-500 ease-in-out"
             style={{ transform: `translateX(-${current * 100}%)` }}
           >
             {cases.map((c, i) => (
               <div
                 key={i}
-                className="w-full flex-shrink-0 h-[calc(100vh-5rem)] flex flex-col justify-start px-16 pt-16 pb-20"
+                className="w-full flex-shrink-0 h-full flex flex-col justify-start px-5 pt-8 pb-20 md:px-16 md:pt-16 md:pb-20"
               >
-                <div className="max-w-3xl mx-auto w-full space-y-8 overflow-y-auto max-h-[calc(100vh-14rem)]">
+                <div className="max-w-3xl md:mx-auto w-full space-y-5 md:space-y-8 overflow-y-auto max-h-[calc(100svh-13rem)] md:max-h-[calc(100vh-14rem)]">
                   {/* Slide header */}
-                  <div className="border-b border-white/20 pb-6">
+                  <div className="border-b border-white/20 pb-4 md:pb-6">
                     {c.badge && (
                       <div className="mb-2">
                         <span className="font-[family-name:var(--font-geist-mono)] text-xs border border-white/30 px-2 py-0.5 text-white/50">
@@ -216,12 +189,12 @@ export default function WorkCarousel() {
                         </span>
                       </div>
                     )}
-                    <h3 className="text-4xl lg:text-5xl font-bold leading-tight">
+                    <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight">
                       {c.title}
                     </h3>
                   </div>
                   {/* Content blocks */}
-                  <div className="space-y-5">
+                  <div className="space-y-4 md:space-y-5">
                     {c.blocks.map((block, j) => renderBlock(block, j))}
                   </div>
                 </div>
@@ -230,33 +203,33 @@ export default function WorkCarousel() {
           </div>
         </div>
 
-        {/* ← Arrow */}
+        {/* ← Arrow — desktop only */}
         {current > 0 && (
           <button
             onClick={prev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center border border-white text-white hover:bg-white hover:text-black transition-colors duration-200 font-[family-name:var(--font-geist-mono)] text-lg"
+            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center border border-white text-white hover:bg-white hover:text-black transition-colors duration-200 font-[family-name:var(--font-geist-mono)] text-lg"
             aria-label="Previous case"
           >
             ←
           </button>
         )}
-        {/* → Arrow */}
+        {/* → Arrow — desktop only */}
         {current < cases.length - 1 && (
           <button
             onClick={next}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center border border-white text-white hover:bg-white hover:text-black transition-colors duration-200 font-[family-name:var(--font-geist-mono)] text-lg"
+            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center border border-white text-white hover:bg-white hover:text-black transition-colors duration-200 font-[family-name:var(--font-geist-mono)] text-lg"
             aria-label="Next case"
           >
             →
           </button>
         )}
 
-        {/* Bottom bar: dots + counter (center) · Get Started CTA (right) */}
-        <div className="absolute bottom-6 left-0 right-0 flex items-center justify-between px-16">
-          {/* Left spacer */}
-          <div className="w-32" />
-          {/* Center: pagination dots + counter */}
-          <div className="flex items-center gap-3">
+        {/* Bottom bar: dots + counter · Get Started CTA */}
+        <div className="absolute bottom-6 left-0 right-0 flex items-center justify-between px-5 md:px-16">
+          {/* Left spacer — desktop only */}
+          <div className="hidden md:block w-32" />
+          {/* Dots + counter */}
+          <div className="flex items-center gap-2 md:gap-3">
             {cases.map((_, i) => (
               <button
                 key={i}
@@ -264,24 +237,22 @@ export default function WorkCarousel() {
                 aria-label={`Go to case ${i + 1}`}
                 className={`transition-all duration-300 rounded-full ${
                   i === current
-                    ? "w-5 h-2.5 bg-white"
-                    : "w-2.5 h-2.5 bg-white/40 hover:bg-white/80"
+                    ? "w-4 h-2 md:w-5 md:h-2.5 bg-white"
+                    : "w-2 h-2 md:w-2.5 md:h-2.5 bg-white/40 hover:bg-white/80"
                 }`}
               />
             ))}
-            <span className="font-[family-name:var(--font-geist-mono)] text-sm text-white/60 ml-3">
+            <span className="font-[family-name:var(--font-geist-mono)] text-xs md:text-sm text-white/60 ml-2 md:ml-3">
               {current + 1} / {cases.length}
             </span>
           </div>
-          {/* Right: scroll to next section */}
-          <div className="w-32 flex justify-end">
-            <a
-              href="#contact"
-              className="font-[family-name:var(--font-geist-mono)] text-xs text-orange-400 hover:text-orange-300 transition-colors duration-200 tracking-widest"
-            >
-              GET STARTED ↓
-            </a>
-          </div>
+          {/* CTA */}
+          <a
+            href="#contact"
+            className="font-[family-name:var(--font-geist-mono)] text-xs text-orange-400 hover:text-orange-300 transition-colors duration-200 tracking-widest"
+          >
+            GET STARTED ↓
+          </a>
         </div>
       </div>
     </section>

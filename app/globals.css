@@ -4,7 +4,13 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+}
+
+/* Snap scroll only on desktop — mobile browsers fight it with dynamic chrome */
+@media (min-width: 768px) {
+  html {
+    scroll-snap-type: y mandatory;
+  }
 }
 
 body {
