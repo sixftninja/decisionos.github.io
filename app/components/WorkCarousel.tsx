@@ -265,13 +265,17 @@ export default function WorkCarousel() {
               {current + 1} / {cases.length}
             </span>
           </div>
-          {/* CTA */}
-          <a
-            href="#contact"
+          {/* CTA — JS scroll avoids anchor/inner-scroll conflict */}
+          <button
+            onClick={() =>
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
             className="font-[family-name:var(--font-geist-mono)] text-xs text-orange-400 hover:text-orange-300 transition-colors duration-200 tracking-widest"
           >
             GET STARTED ↓
-          </a>
+          </button>
         </div>
       </div>
     </section>

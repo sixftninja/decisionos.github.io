@@ -5,7 +5,6 @@ import { useState, useEffect, useCallback, useRef } from "react";
 type ContentBlock =
   | { type: "para"; text: string }
   | { type: "list"; label: string; items: string[] }
-  | { type: "quotes"; items: string[] }
   | { type: "note"; text: string }
   | { type: "footnote"; text: string };
 
@@ -23,109 +22,90 @@ const screens: Screen[] = [
     blocks: [
       {
         type: "para",
-        text: "What's actually happening inside your business? Not what the org chart says. What's actually happening.",
+        text: "What's actually happening inside your business? Not the version that made it into the deck.",
       },
       {
         type: "para",
-        text: "We connect to your systems — ERP, databases, custom applications — and reverse engineer your operational reality.",
-      },
-      {
-        type: "list",
-        label: "You discover:",
-        items: [
-          "Actual process flows vs. documented fantasy",
-          "Real decision patterns vs. stated policy",
-          "Where work quietly stalls",
-          "Data quality issues — duplicates, orphans, broken logic",
-        ],
-      },
-      { type: "note", text: "Delivered in days, not months." },
-      // Footnote: visually separated from main content — asterisk-style aside
-      {
-        type: "footnote",
-        text: "A snapshot is available at no cost for qualified engagements.",
-      },
-    ],
-  },
-  {
-    step: "TIER 02",
-    title: "Operational Dashboard",
-    blocks: [
-      { type: "para", text: "Your X-Ray becomes a live instrument." },
-      {
-        type: "para",
-        text: "Real-time intelligence from your own data — not benchmarks, not templates. Your patterns. Your anomalies.",
+        text: "We connect to your systems and surface what's real — without documentation, interviews, or lengthy onboarding.",
       },
       {
         type: "list",
         label: "You get:",
         items: [
-          "Process flows with actual cycle times",
-          "Decision traces — who approved what, when, and why",
-          "Anomalies surfaced before they become crises",
-          "Predictions from your historical patterns, not industry averages",
+          "Operational map — processes, decisions, data flows as they actually are",
+          "Data quality audit: duplicates, orphans, broken logic",
+          "Gaps between stated process and actual behaviour",
+          "Custom scope: point us at any part of your business and we'll dig in",
+        ],
+      },
+      { type: "note", text: "Delivered in days, not months." },
+      {
+        type: "footnote",
+        text: "Schema gets you a free snapshot. Full X-Ray requires data access.",
+      },
+    ],
+  },
+  {
+    step: "TIER 02",
+    title: "Live Intelligence",
+    blocks: [
+      {
+        type: "para",
+        text: "Your X-Ray comes alive. Real-time operational visibility — plus the Adaptive Interface: Decision OS agents that observe how your team works and surface custom UI suggestions based on your usage patterns.",
+      },
+      {
+        type: "list",
+        label: "You get:",
+        items: [
+          "Real-time operational dashboard — your data, your patterns",
+          "Anomaly detection surfaced before they become crises",
+          "Institutional knowledge captured and searchable",
+          "The Adaptive Interface — custom UI suggestions surfaced by agents as they learn",
         ],
       },
     ],
   },
   {
     step: "TIER 03",
-    title: "Adaptive Interface",
+    title: "Operational Brain",
     blocks: [
-      { type: "para", text: "Ask your business anything. In plain English." },
       {
-        type: "quotes",
+        type: "para",
+        text: "Decision OS becomes the intelligence layer your other tools report to.",
+      },
+      {
+        type: "para",
+        text: "Describe a new workflow and watch it get built. Every decision carries context, history, and precedent. Your ERP still runs. Your CRM still runs.",
+      },
+      {
+        type: "list",
+        label: "You get:",
         items: [
-          '"Which production lines are running behind?"',
-          '"Show me compliance exceptions from last quarter."',
-          '"What happens to yield if we increase batch size by 15%?"',
+          "Decision OS becomes your operating system — SaaS tools become the plumbing",
+          "Every decision tracked with full context and history",
+          "What-if scenarios and predictive modelling before you commit",
+          "Conversational workflow creation — describe it, validate it, deploy it",
         ],
       },
       {
-        type: "para",
-        text: "Immediate answers. No SQL. No analyst. No waiting.",
-      },
-      {
-        type: "para",
-        text: "The interface doesn't just respond — it learns. Ask the same question twice and it builds a one-click report. Describe a new workflow and it creates the UI. Your tools evolve around how you actually work.",
+        type: "note",
+        text: "Currently delivered as a consulting engagement.",
       },
     ],
   },
   {
     step: "TIER 04",
-    title: "Operational Brain",
-    blocks: [
-      {
-        type: "para",
-        text: "Decision OS becomes the intelligence layer your other tools report to — not the other way around.",
-      },
-      {
-        type: "para",
-        text: "Every decision carries context, history, and precedent. What-if scenarios run before you commit. New workflows emerge conversationally — describe what you need, watch it get built, validate it, deploy it.",
-      },
-      {
-        type: "para",
-        text: "Your ERP still runs. Your CRM still runs. Decision OS sits above them — extracting signal, surfacing decisions, making your team faster.",
-      },
-      {
-        type: "note",
-        text: "Currently delivered as a consulting engagement while the platform matures.",
-      },
-    ],
-  },
-  {
-    step: "TIER 05",
     title: "The Final Boss",
     comingSoon: true,
     blocks: [
       { type: "para", text: "The last enterprise software you'll need." },
       {
         type: "para",
-        text: "Everything Decision OS has learned about your business — your processes, your decisions, your data — becomes the foundation to replace the vendor abstractions you've been paying for.",
+        text: "Everything Decision OS has learned about your business becomes the foundation to replace the vendor tools you've been paying for. One by one. At your pace.",
       },
       {
         type: "para",
-        text: "One by one. At your pace. Until the only system that knows your business is the one built entirely around it.",
+        text: "Until the only system that knows your business is the one built entirely around it.",
       },
       { type: "note", text: "This is where we're going." },
     ],
@@ -156,19 +136,6 @@ function renderBlock(block: ContentBlock, i: number) {
           </ul>
         </div>
       );
-    case "quotes":
-      return (
-        <div
-          key={i}
-          className="space-y-2 font-[family-name:var(--font-geist-mono)] text-sm pl-4 border-l-2 border-white/20"
-        >
-          {block.items.map((item, j) => (
-            <p key={j} className="text-white/60">
-              {item}
-            </p>
-          ))}
-        </div>
-      );
     case "note":
       return (
         <p key={i} className="text-white/70 text-sm">
@@ -176,7 +143,6 @@ function renderBlock(block: ContentBlock, i: number) {
         </p>
       );
     case "footnote":
-      // Visually separated footnote — asterisk prefix, dimmer, smaller, clear divider
       return (
         <div key={i} className="border-t border-white/10 pt-4 mt-2">
           <p className="font-[family-name:var(--font-geist-mono)] text-xs text-green-400/70">
@@ -253,7 +219,7 @@ export default function VisionCarousel() {
             How It Works
           </span>
           <p className="text-green-400 text-sm mt-1">
-            Five tiers. Each builds on the last. Take what you need.
+            Four engagement tiers. Enter at any level. Each builds on the last.
           </p>
         </div>
       </div>
@@ -346,13 +312,17 @@ export default function VisionCarousel() {
               {current + 1} / {screens.length}
             </span>
           </div>
-          {/* CTA */}
-          <a
-            href="#proof"
+          {/* CTA — JS scroll avoids anchor/inner-scroll conflict */}
+          <button
+            onClick={() =>
+              document
+                .getElementById("proof")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
             className="font-[family-name:var(--font-geist-mono)] text-xs text-orange-400 hover:text-orange-300 transition-colors duration-200 tracking-widest"
           >
             RECENT WORK ↓
-          </a>
+          </button>
         </div>
       </div>
     </section>
