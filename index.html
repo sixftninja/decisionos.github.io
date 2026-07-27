@@ -98,16 +98,16 @@
 
       <div class="problem-copy">
         <p class="section-label">The operating gap</p>
-        <h2 class="section-h2" id="problem-heading">Business systems record operations. DecisionOS adds the context required to reason about them.</h2>
-        <p class="section-body">ERP, CRM, project management, and analytics systems already provide valuable records and meaningful forms of decision support. Their limitation is not that they contain nothing useful.</p>
-        <p class="section-body" style="margin-top:16px">The limitation is that records alone rarely capture the complete context behind an operating decision: what constraint mattered, why an exception was made, what alternatives existed, who exercised judgment, and what happened afterward. DecisionOS connects those records with the context, relationships, and outcomes that explain them.</p>
+        <h2 class="section-h2" id="problem-heading">Business systems record operations. DecisionOS connects the context needed to understand what happened and decide what to do next.</h2>
+        <p class="section-body">ERP, CRM, project-management, and analytics systems provide valuable records and decision support. But records alone rarely capture which constraint mattered, why an exception was made, what alternatives existed, who exercised judgment, and what happened afterward.</p>
+        <p class="section-body" style="margin-top:14px">DecisionOS connects those records with the context, relationships, decisions, and outcomes that explain them.</p>
       </div>
 
       <div class="problem-visual reveal" aria-label="Expected versus actual process comparison">
         <div class="flow-block">
 
           <div class="flow-track">
-            <div class="flow-track-label">Expected process</div>
+            <div class="flow-track-label">Planned flow</div>
             <div class="flow-nodes">
               <span class="flow-node">Order</span>
               <span class="flow-arrow">→</span>
@@ -120,7 +120,7 @@
           <div class="flow-divider"></div>
 
           <div class="flow-track">
-            <div class="flow-track-label">Actual operation</div>
+            <div class="flow-track-label">Actual execution</div>
             <div class="flow-nodes">
               <span class="flow-node accent">Order change</span>
               <span class="flow-arrow">→</span>
@@ -128,15 +128,15 @@
               <span class="flow-arrow">→</span>
               <span class="flow-node accent">Manager decision</span>
               <span class="flow-arrow">→</span>
-              <span class="flow-node muted">Production adjustment</span>
+              <span class="flow-node">Production adjustment</span>
               <span class="flow-arrow">→</span>
-              <span class="flow-node muted">Delivery change</span>
+              <span class="flow-node">Delivery change</span>
               <span class="flow-arrow">→</span>
-              <span class="flow-node">Outcome</span>
+              <span class="flow-node outcome">Outcome</span>
             </div>
           </div>
 
-          <p class="flow-note" style="margin-top:18px">Both flows are recorded. The constraints, decisions, and judgment connecting them are what DecisionOS makes visible and reusable.</p>
+          <p class="flow-takeaway">See what changed, why it changed, and what it affects next.</p>
         </div>
       </div>
 
@@ -209,27 +209,24 @@
           </div>
         </div>
 
+        <p class="app-factors-label">Factors shaping actual execution</p>
         <div class="app-factors">
-          <span class="app-factor">material constraints</span>
-          <span class="app-factor">machine availability</span>
-          <span class="app-factor">labor availability</span>
-          <span class="app-factor">sequencing changes</span>
-          <span class="app-factor">rework</span>
-          <span class="app-factor">quality holds</span>
-          <span class="app-factor">priority changes</span>
-          <span class="app-factor">production delays</span>
-          <span class="app-factor">dispatch changes</span>
-          <span class="app-factor">delivery risk</span>
+          <span class="app-factor">Material constraints</span>
+          <span class="app-factor">Machine availability</span>
+          <span class="app-factor">Quality holds</span>
+          <span class="app-factor">Priority changes</span>
+          <span class="app-factor">Production delays</span>
+          <span class="app-factor">Delivery risk</span>
         </div>
 
-        <p class="app-note">The objective is not another reporting layer. It is earlier understanding of what changed, why it changed, and what the change affects next.</p>
+        <p class="app-note">Understand what changed, why it changed, and what it affects next.</p>
       </div>
 
       <!-- Application 2: Marketing operations -->
       <div class="app-card reveal">
         <div class="app-tag">Marketing operations</div>
         <h3 class="app-title">Decision intelligence for marketing operations</h3>
-        <p class="app-body">Connect client context, strategy, execution, approvals, feedback, and outcomes so agencies and marketing teams do not rebuild their understanding in every document, conversation, and meeting.</p>
+        <p class="app-body">Carry client context, strategy, decisions, approvals, feedback, and outcomes through execution—without piecing them together again across documents, chats, and meetings.</p>
 
         <div class="app-flow">
           <div class="app-flow-label">Engagement lifecycle</div>
@@ -257,7 +254,7 @@
           <span class="app-factor">outcome learning</span>
         </div>
 
-        <p class="app-note">Decisions, feedback, and client context remain visible across engagements—not buried in documents or lost between meetings.</p>
+        <p class="app-note">Each engagement starts with what the team already knows—not from a blank page.</p>
       </div>
 
     </div>
@@ -269,8 +266,8 @@
   <div class="container">
 
     <p class="section-label">Why DecisionOS</p>
-    <h2 class="section-h2" id="why-heading">More than an AI interface over company data.</h2>
-    <p class="diff-sub">Most enterprise AI retrieves information and generates responses. DecisionOS is built to understand operating context, connect decisions to outcomes, and retain what the company learns.</p>
+    <h2 class="section-h2" id="why-heading">AI that helps companies decide—not just retrieve and summarize.</h2>
+    <p class="diff-sub">DecisionOS connects operating context, human judgment, actions, and outcomes so each decision can benefit from what the company already knows and has learned.</p>
 
     <div class="diff-table reveal" role="table" aria-label="Comparison">
       <div class="diff-head" role="row">
@@ -278,28 +275,16 @@
         <div class="diff-col-h" role="columnheader">DecisionOS approach</div>
       </div>
       <div class="diff-row" role="row">
-        <div class="diff-cell" role="cell">Retrieves relevant records and documents</div>
+        <div class="diff-cell" role="cell">Retrieves records and documents</div>
         <div class="diff-cell" role="cell">Reconstructs the operating context around a decision</div>
       </div>
       <div class="diff-row" role="row">
-        <div class="diff-cell" role="cell">Answers an isolated request</div>
-        <div class="diff-cell" role="cell">Preserves continuity across decisions and outcomes</div>
+        <div class="diff-cell" role="cell">Generates a response</div>
+        <div class="diff-cell" role="cell">Connects the response to action and outcome</div>
       </div>
       <div class="diff-row" role="row">
-        <div class="diff-cell" role="cell">Uses recorded data as the available representation</div>
-        <div class="diff-cell" role="cell">Compares expected process, recorded activity, and actual execution</div>
-      </div>
-      <div class="diff-row" role="row">
-        <div class="diff-cell" role="cell">Generates an output</div>
-        <div class="diff-cell" role="cell">Connects the output to action and outcome</div>
-      </div>
-      <div class="diff-row" role="row">
-        <div class="diff-cell" role="cell">Repeats similar reasoning</div>
-        <div class="diff-cell" role="cell">Builds reusable company-owned knowledge and datasets</div>
-      </div>
-      <div class="diff-row" role="row">
-        <div class="diff-cell" role="cell">Measures model performance</div>
-        <div class="diff-cell" role="cell">Evaluates whether the result was useful in the operating context</div>
+        <div class="diff-cell" role="cell">Handles each request independently</div>
+        <div class="diff-cell" role="cell">Uses reusable company knowledge and previous outcomes</div>
       </div>
     </div>
 
