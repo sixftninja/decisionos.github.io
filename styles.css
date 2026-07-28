@@ -22,23 +22,14 @@
   --nav-h: 60px;
 }
 
-/* ── SCROLL SNAP ────────────────────────────────────────── */
+/* ── BASE HTML ──────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
   scroll-padding-top: var(--nav-h);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-snap-type: none;
-    scroll-behavior: auto;
-  }
-}
-
-.snap-section {
-  scroll-snap-align: start;
-  min-height: 100svh;
+  html { scroll-behavior: auto; }
 }
 
 /* Non-hero sections: padding for fixed nav, flex-centered */
