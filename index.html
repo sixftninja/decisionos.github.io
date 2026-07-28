@@ -6,7 +6,6 @@
   <title>DecisionOS — Software That Learns How Your Company Operates</title>
   <meta name="description" content="DecisionOS connects operational data, business context, human judgment, and outcomes to help companies understand execution and improve future decisions." />
 
-  <!-- Open Graph -->
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://decisionos.dev/" />
   <meta property="og:title"       content="DecisionOS — Software That Learns How Your Company Operates" />
@@ -21,26 +20,26 @@
 <body>
 
 <!-- ── NAVIGATION ──────────────────────────────────────── -->
-<nav id="nav" role="navigation" aria-label="Main">
+<nav id="nav" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="/" class="nav-wordmark">DecisionOS</a>
 
     <ul class="nav-links" role="list">
-      <li><a href="#what-it-does">What it does</a></li>
+      <li><a href="#context">What it does</a></li>
       <li><a href="#applications">Applications</a></li>
       <li><a href="#why">Why DecisionOS</a></li>
     </ul>
 
     <a href="#contact" class="nav-cta">Get in touch</a>
 
-    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
 <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile menu">
-  <a href="#what-it-does">What it does</a>
+  <a href="#context">What it does</a>
   <a href="#applications">Applications</a>
   <a href="#why">Why DecisionOS</a>
   <a href="#contact" class="mob-cta">Get in touch →</a>
@@ -48,12 +47,12 @@
 
 <main>
 
-<!-- ── HERO ────────────────────────────────────────────── -->
-<section id="hero" aria-label="Hero">
+<!-- ── SECTION 1: HERO ─────────────────────────────────── -->
+<section id="hero" class="snap-section" aria-label="Introduction">
   <div class="hero-inner">
 
     <div class="hero-content">
-      <p class="hero-eyebrow">Decision intelligence</p>
+      <span class="hero-eyebrow">Decision intelligence</span>
       <h1 class="hero-h1">Software that learns how your company actually operates.</h1>
       <p class="hero-sub">DecisionOS turns fragmented operational data, workflows, human judgment, and outcomes into a continuously improving decision system.</p>
       <div class="hero-ctas">
@@ -62,7 +61,7 @@
       </div>
     </div>
 
-    <div class="hero-diagram" aria-label="Product model">
+    <div aria-label="Product model: three stages">
       <div class="model-stack">
         <div class="model-layer">
           <div class="model-num">01</div>
@@ -91,23 +90,20 @@
   </div>
 </section>
 
-<!-- ── PROBLEM ──────────────────────────────────────────── -->
-<section id="problem" class="section" aria-labelledby="problem-heading">
+<!-- ── SECTION 2: CONTEXT (operating gap + what it does) ── -->
+<section id="context" class="snap-section" aria-labelledby="context-h2">
   <div class="container">
-    <div class="problem-layout">
+    <div class="context-layout">
 
-      <div class="problem-copy">
-        <p class="section-label">The operating gap</p>
-        <h2 class="section-h2" id="problem-heading">Business systems record operations. DecisionOS connects the context needed to understand what happened and decide what to do next.</h2>
-        <p class="section-body">ERP, CRM, project-management, and analytics systems provide valuable records and decision support. But records alone rarely capture which constraint mattered, why an exception was made, what alternatives existed, who exercised judgment, and what happened afterward.</p>
-        <p class="section-body" style="margin-top:14px">DecisionOS connects those records with the context, relationships, decisions, and outcomes that explain them.</p>
-      </div>
+      <!-- Left: operating gap + flow visual -->
+      <div class="context-left reveal">
+        <span class="section-label">The operating gap</span>
+        <h2 class="h2" id="context-h2">Records show what happened. Context explains why.</h2>
+        <p class="body-text">DecisionOS connects operational records with the constraints, exceptions, relationships, judgment, and outcomes behind them.</p>
 
-      <div class="problem-visual reveal" aria-label="Expected versus actual process comparison">
-        <div class="flow-block">
-
+        <div class="flow-block" aria-label="Expected versus actual process comparison">
           <div class="flow-track">
-            <div class="flow-track-label">Planned flow</div>
+            <span class="flow-track-label">Expected process</span>
             <div class="flow-nodes">
               <span class="flow-node">Order</span>
               <span class="flow-arrow">→</span>
@@ -120,17 +116,15 @@
           <div class="flow-divider"></div>
 
           <div class="flow-track">
-            <div class="flow-track-label">Actual execution</div>
+            <span class="flow-track-label">Actual execution</span>
             <div class="flow-nodes">
-              <span class="flow-node accent">Order change</span>
+              <span class="flow-node hi">Order change</span>
               <span class="flow-arrow">→</span>
-              <span class="flow-node accent">Material constraint</span>
+              <span class="flow-node hi">Constraint</span>
               <span class="flow-arrow">→</span>
-              <span class="flow-node accent">Manager decision</span>
+              <span class="flow-node hi">Decision</span>
               <span class="flow-arrow">→</span>
-              <span class="flow-node">Production adjustment</span>
-              <span class="flow-arrow">→</span>
-              <span class="flow-node">Delivery change</span>
+              <span class="flow-node">Adjustment</span>
               <span class="flow-arrow">→</span>
               <span class="flow-node outcome">Outcome</span>
             </div>
@@ -140,62 +134,56 @@
         </div>
       </div>
 
+      <!-- Right: compact three-part model -->
+      <div class="context-right reveal">
+        <span class="section-label">What it does</span>
+        <div class="context-model" aria-label="Three-part product model">
+          <div class="context-model-item">
+            <div class="cmi-num">01</div>
+            <div>
+              <div class="cmi-title">Understand the company</div>
+              <div class="cmi-body">Systems, workflows, people, relationships, and constraints.</div>
+            </div>
+          </div>
+          <div class="context-model-item">
+            <div class="cmi-num">02</div>
+            <div>
+              <div class="cmi-title">Understand what is happening</div>
+              <div class="cmi-body">Execution, exceptions, decisions, and outcomes.</div>
+            </div>
+          </div>
+          <div class="context-model-item">
+            <div class="cmi-num">03</div>
+            <div>
+              <div class="cmi-title">Improve future decisions</div>
+              <div class="cmi-body">Relevant context, applied intelligence, evaluation, and learning.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ── CAPABILITIES ─────────────────────────────────────── -->
-<section id="what-it-does" class="section" aria-labelledby="caps-heading">
-  <div class="container">
-    <div class="caps-header">
-      <p class="section-label">What it does</p>
-      <h2 class="section-h2" id="caps-heading">Four capabilities. One decision system.</h2>
-    </div>
-
-    <div class="caps-grid reveal">
-      <div class="cap">
-        <div class="cap-num">01</div>
-        <div class="cap-title">Connects operating context</div>
-        <p class="cap-body">Understands the company's systems, terminology, roles, workflows, relationships, constraints, objectives, and evidence—and keeps that understanding current.</p>
-      </div>
-      <div class="cap">
-        <div class="cap-num">02</div>
-        <div class="cap-title">Reconstructs decisions</div>
-        <p class="cap-body">Connects events, evidence, alternatives, human judgment, actions, and outcomes—not merely documents and database rows.</p>
-      </div>
-      <div class="cap">
-        <div class="cap-num">03</div>
-        <div class="cap-title">Surfaces divergence</div>
-        <p class="cap-body">Shows where expected processes and actual execution differ, including exceptions, bottlenecks, changing constraints, and hidden dependencies.</p>
-      </div>
-      <div class="cap">
-        <div class="cap-num">04</div>
-        <div class="cap-title">Improves future execution</div>
-        <p class="cap-body">Uses previous decisions and outcomes to improve context, recommendations, evaluation, and reusable organizational knowledge.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── APPLICATIONS ─────────────────────────────────────── -->
-<section id="applications" class="section" aria-labelledby="apps-heading">
+<!-- ── SECTION 3: APPLICATIONS ─────────────────────────── -->
+<section id="applications" class="snap-section" aria-label="Applications">
   <div class="container">
 
-    <div class="apps-header">
-      <p class="section-label">Applications</p>
-      <h2 class="section-h2" id="apps-heading">One decision system. Applications built around real operating problems.</h2>
+    <div class="apps-intro">
+      <span class="section-label">Applications</span>
     </div>
 
     <div class="apps-grid">
 
-      <!-- Application 1: Manufacturing -->
+      <!-- Manufacturing -->
       <div class="app-card reveal">
-        <div class="app-tag">Finite discrete manufacturing</div>
-        <h3 class="app-title">Decision intelligence for finite discrete manufacturing</h3>
-        <p class="app-body">Connect order, production, and delivery flows with the exceptions and decisions that shape actual execution. DecisionOS helps manufacturers compare plan against reality, identify emerging production risk, and preserve the judgment behind operational changes.</p>
+        <span class="app-tag">Finite discrete manufacturing</span>
+        <h2 class="app-title">Finite discrete manufacturing</h2>
+        <p class="app-body">Connect planned operations with the constraints, exceptions, and decisions shaping actual execution.</p>
 
         <div class="app-flow">
-          <div class="app-flow-label">Operating flow</div>
+          <span class="app-flow-label">Principal flow</span>
           <div class="app-flow-nodes">
             <span class="app-node">Order</span>
             <span class="app-arrow">→</span>
@@ -209,7 +197,7 @@
           </div>
         </div>
 
-        <p class="app-factors-label">Factors shaping actual execution</p>
+        <span class="app-factors-label">Factors shaping actual execution</span>
         <div class="app-factors">
           <span class="app-factor">Material constraints</span>
           <span class="app-factor">Machine availability</span>
@@ -219,17 +207,17 @@
           <span class="app-factor">Delivery risk</span>
         </div>
 
-        <p class="app-note">Understand what changed, why it changed, and what it affects next.</p>
+        <p class="app-note">Understand what changed—and what it affects next.</p>
       </div>
 
-      <!-- Application 2: Marketing operations -->
+      <!-- Marketing operations -->
       <div class="app-card reveal">
-        <div class="app-tag">Marketing operations</div>
-        <h3 class="app-title">Decision intelligence for marketing operations</h3>
-        <p class="app-body">Carry client context, strategy, decisions, approvals, feedback, and outcomes through execution—without piecing them together again across documents, chats, and meetings.</p>
+        <span class="app-tag">Marketing operations</span>
+        <h2 class="app-title">Marketing operations</h2>
+        <p class="app-body">Carry client context and decisions from brief through execution and outcomes.</p>
 
         <div class="app-flow">
-          <div class="app-flow-label">Engagement lifecycle</div>
+          <span class="app-flow-label">Engagement lifecycle</span>
           <div class="app-flow-nodes">
             <span class="app-node">Brief</span>
             <span class="app-arrow">→</span>
@@ -245,109 +233,81 @@
           </div>
         </div>
 
+        <span class="app-factors-label">Context carried through the engagement</span>
         <div class="app-factors">
-          <span class="app-factor">accumulated client knowledge</span>
-          <span class="app-factor">brief analysis</span>
-          <span class="app-factor">approval chains</span>
-          <span class="app-factor">feedback loops</span>
-          <span class="app-factor">decision continuity</span>
-          <span class="app-factor">outcome learning</span>
+          <span class="app-factor">Client knowledge</span>
+          <span class="app-factor">Brief analysis</span>
+          <span class="app-factor">Strategic decisions</span>
+          <span class="app-factor">Approvals</span>
+          <span class="app-factor">Feedback</span>
+          <span class="app-factor">Outcome learning</span>
         </div>
 
-        <p class="app-note">Each engagement starts with what the team already knows—not from a blank page.</p>
+        <p class="app-note">Start each engagement with what the team already knows.</p>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ── DIFFERENTIATION ──────────────────────────────────── -->
-<section id="why" class="section" aria-labelledby="why-heading">
+<!-- ── SECTION 4: WHY + OWNERSHIP ──────────────────────── -->
+<section id="why" class="snap-section" aria-label="Why DecisionOS and data ownership">
   <div class="container">
+    <div class="why-layout">
 
-    <p class="section-label">Why DecisionOS</p>
-    <h2 class="section-h2" id="why-heading">AI that helps companies decide—not just retrieve and summarize.</h2>
-    <p class="diff-sub">DecisionOS connects operating context, human judgment, actions, and outcomes so each decision can benefit from what the company already knows and has learned.</p>
+      <!-- Left: differentiation -->
+      <div class="why-left reveal">
+        <span class="section-label">Why DecisionOS</span>
+        <h2 class="h2" id="why-h2">Intelligence that helps companies reach better decisions.</h2>
+        <p class="diff-sub">DecisionOS connects information with operating context, judgment, actions, and outcomes—not just retrieval and summarization.</p>
 
-    <div class="diff-table reveal" role="table" aria-label="Comparison">
-      <div class="diff-head" role="row">
-        <div class="diff-col-h" role="columnheader">Common enterprise AI pattern</div>
-        <div class="diff-col-h" role="columnheader">DecisionOS approach</div>
-      </div>
-      <div class="diff-row" role="row">
-        <div class="diff-cell" role="cell">Retrieves records and documents</div>
-        <div class="diff-cell" role="cell">Reconstructs the operating context around a decision</div>
-      </div>
-      <div class="diff-row" role="row">
-        <div class="diff-cell" role="cell">Generates a response</div>
-        <div class="diff-cell" role="cell">Connects the response to action and outcome</div>
-      </div>
-      <div class="diff-row" role="row">
-        <div class="diff-cell" role="cell">Handles each request independently</div>
-        <div class="diff-cell" role="cell">Uses reusable company knowledge and previous outcomes</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ── OWNERSHIP ────────────────────────────────────────── -->
-<section id="ownership" class="section" aria-labelledby="ownership-heading">
-  <div class="container">
-
-    <div class="ownership-layout">
-
-      <div class="ownership-left reveal">
-        <p class="section-label">Data ownership</p>
-        <h2 class="ownership-h2" id="ownership-heading">The intelligence belongs to the customer.</h2>
-        <p class="ownership-body">The customer owns the underlying data and the organizational intelligence created from it. DecisionOS is designed to strengthen the customer's knowledge base—not create dependency on an inaccessible proprietary memory.</p>
-        <p class="ownership-body">Every dataset, evaluation, decision history, and accumulated insight produced from your operations is yours.</p>
-        <div class="ownership-stamp">Owned by the customer</div>
-      </div>
-
-      <div class="ownership-right reveal">
-        <div class="ownership-cats" aria-label="Customer-owned asset categories">
-          <div class="own-cat">
-            <div class="own-cat-h">Data</div>
-            <div class="own-cat-items">Source records · documents · conversations · conversation histories used by the system</div>
+        <div class="diff-compact" role="table" aria-label="Comparison">
+          <div class="diff-item" role="row">
+            <div class="diff-pattern" role="cell">Finds relevant information</div>
+            <div class="diff-approach" role="cell">Reconstructs the context around a decision.</div>
           </div>
-          <div class="own-cat">
-            <div class="own-cat-h">Knowledge</div>
-            <div class="own-cat-items">Relationships between entities, events, and people · operating context · decision histories · decision traces · corrections and human feedback</div>
+          <div class="diff-item" role="row">
+            <div class="diff-pattern" role="cell">Generates an answer</div>
+            <div class="diff-approach" role="cell">Connects recommendations to actions and outcomes.</div>
           </div>
-          <div class="own-cat">
-            <div class="own-cat-h">Learning</div>
-            <div class="own-cat-items">DecisionOS-generated datasets · evaluation datasets and results · derived context · accumulated organizational knowledge · intelligence produced from your operations</div>
+          <div class="diff-item" role="row">
+            <div class="diff-pattern" role="cell">Handles each request separately</div>
+            <div class="diff-approach" role="cell">Retains reusable knowledge from previous decisions.</div>
           </div>
         </div>
       </div>
 
-    </div>
+      <!-- Right: ownership -->
+      <div class="why-right reveal">
+        <span class="section-label">Data ownership</span>
+        <h2 class="h2" id="ownership-h2">The intelligence belongs to the customer.</h2>
+        <p class="ownership-body">Customers own their source data and the intelligence created from it—including datasets, evaluations, decision histories, relationships, conversations, corrections, context, and outcomes.</p>
+        <div class="ownership-highlight">Your company's accumulated intelligence remains your company's asset.</div>
+      </div>
 
+    </div>
   </div>
 </section>
 
-<!-- ── CONTACT ───────────────────────────────────────────── -->
-<section id="contact" class="section" aria-labelledby="contact-heading">
+<!-- ── SECTION 5: CONTACT ───────────────────────────────── -->
+<section id="contact" class="snap-section" aria-labelledby="contact-h2">
   <div class="container">
-
     <div class="contact-layout">
 
       <div class="contact-intro reveal">
-        <p class="section-label">Get in touch</p>
-        <h2 class="section-h2" id="contact-heading">Get in touch</h2>
-        <p class="contact-sub">Tell us about an operation, workflow, or decision process that existing systems do not fully explain.</p>
+        <span class="section-label">Get in touch</span>
+        <h2 class="h2" id="contact-h2">Get in touch</h2>
+        <p class="contact-sub">Tell us about an operation or decision process worth understanding better.</p>
         <div class="contact-email">
-          <div class="contact-email-label">Direct email</div>
+          <span class="contact-email-label">Direct email</span>
           <a href="mailto:anand@decisionos.dev">anand@decisionos.dev</a>
         </div>
       </div>
 
       <!--
         CONTACT FORM SETUP
-        1. Sign up at formspree.io
-        2. Create a new form → copy the form ID (e.g. xabcdefg)
-        3. Replace CONFIGURE below with: https://formspree.io/f/YOUR_FORM_ID
+        Sign up at formspree.io, create a form, copy the ID, then replace
+        CONFIGURE below with: https://formspree.io/f/YOUR_FORM_ID
       -->
       <form
         id="contact-form"
@@ -365,23 +325,15 @@
             <input type="email" id="email" name="email" required placeholder="you@company.com" />
           </div>
         </div>
-        <div class="form-row">
-          <div class="form-field">
-            <label for="company">Company</label>
-            <input type="text" id="company" name="company" placeholder="Company name" />
-          </div>
-          <div class="form-field">
-            <label for="role">Role</label>
-            <input type="text" id="role" name="role" placeholder="Your role" />
-          </div>
+        <div class="form-field">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" placeholder="Company name" />
         </div>
         <div class="form-field">
-          <label for="message">What operation, workflow, or decision process are you trying to improve?</label>
-          <textarea id="message" name="message" required placeholder="Describe the situation…"></textarea>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="Describe the operation or decision process…"></textarea>
         </div>
-        <div class="form-actions">
-          <button type="submit" class="form-submit">Send message</button>
-        </div>
+        <button type="submit" class="form-submit">Send message</button>
         <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
       </form>
 
@@ -395,7 +347,6 @@
 <footer>
   <div class="footer-inner">
     <span class="footer-wordmark">DecisionOS</span>
-    <p class="footer-tagline">Software that learns how your company actually operates.</p>
     <div class="footer-meta">
       <a href="mailto:anand@decisionos.dev">anand@decisionos.dev</a>
       <span class="footer-copy">© 2026 DecisionOS</span>
