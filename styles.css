@@ -32,6 +32,10 @@ html {
   html { scroll-behavior: auto; }
 }
 
+.snap-section {
+  min-height: 100svh;
+}
+
 /* Non-hero sections: padding for fixed nav, flex-centered */
 #context, #applications, #why, #contact {
   display: flex;
