@@ -35,15 +35,28 @@ html {
 
 .snap-section {
   scroll-snap-align: start;
+}
+
+/* Sections with enough content to warrant full-viewport height */
+#hero, #context, #applications, #contact {
   min-height: 100svh;
 }
 
 /* Non-hero sections: center content below fixed nav */
-#context, #applications, #why, #contact {
+#context, #applications, #contact {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: calc(var(--nav-h) + 40px) 0 48px;
+}
+
+/* Ownership has little content — no forced viewport height */
+#ownership {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: auto;
+  padding: calc(var(--nav-h) + 80px) 0 100px;
 }
 
 /* ── RESET ──────────────────────────────────────────────── */
