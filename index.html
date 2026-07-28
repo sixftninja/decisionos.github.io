@@ -23,26 +23,8 @@
 <nav id="nav" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="/" class="nav-wordmark">DecisionOS</a>
-
-    <ul class="nav-links" role="list">
-      <li><a href="#context">What it does</a></li>
-      <li><a href="#applications">Applications</a></li>
-      <li><a href="#why">Why DecisionOS</a></li>
-    </ul>
-
     <a href="#contact" class="nav-cta">Get in touch</a>
-
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
   </div>
-</nav>
-
-<nav class="nav-mobile" id="nav-mobile" aria-label="Mobile menu">
-  <a href="#context">What it does</a>
-  <a href="#applications">Applications</a>
-  <a href="#why">Why DecisionOS</a>
-  <a href="#contact" class="mob-cta">Get in touch →</a>
 </nav>
 
 <main>
@@ -88,9 +70,15 @@
     </div>
 
   </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 1L11 11L21 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
 </section>
 
-<!-- ── SECTION 2: CONTEXT (operating gap + what it does) ── -->
+<!-- ── SECTION 2: CONTEXT ───────────────────────────────── -->
 <section id="context" class="snap-section" aria-labelledby="context-h2">
   <div class="container">
     <div class="context-layout">
@@ -136,7 +124,7 @@
 
       <!-- Right: compact three-part model -->
       <div class="context-right reveal">
-        <span class="section-label">What it does</span>
+        <span class="section-label-plain">What DecisionOS does</span>
         <div class="context-model" aria-label="Three-part product model">
           <div class="context-model-item">
             <div class="cmi-num">01</div>
@@ -250,41 +238,14 @@
   </div>
 </section>
 
-<!-- ── SECTION 4: WHY + OWNERSHIP ──────────────────────── -->
-<section id="why" class="snap-section" aria-label="Why DecisionOS and data ownership">
+<!-- ── SECTION 4: DATA OWNERSHIP ───────────────────────── -->
+<section id="ownership" class="snap-section" aria-labelledby="ownership-h2">
   <div class="container">
-    <div class="why-layout">
-
-      <!-- Left: differentiation -->
-      <div class="why-left reveal">
-        <span class="section-label">Why DecisionOS</span>
-        <h2 class="h2" id="why-h2">Intelligence that helps companies reach better decisions.</h2>
-        <p class="diff-sub">DecisionOS connects information with operating context, judgment, actions, and outcomes—not just retrieval and summarization.</p>
-
-        <div class="diff-compact" role="table" aria-label="Comparison">
-          <div class="diff-item" role="row">
-            <div class="diff-pattern" role="cell">Finds relevant information</div>
-            <div class="diff-approach" role="cell">Reconstructs the context around a decision.</div>
-          </div>
-          <div class="diff-item" role="row">
-            <div class="diff-pattern" role="cell">Generates an answer</div>
-            <div class="diff-approach" role="cell">Connects recommendations to actions and outcomes.</div>
-          </div>
-          <div class="diff-item" role="row">
-            <div class="diff-pattern" role="cell">Handles each request separately</div>
-            <div class="diff-approach" role="cell">Retains reusable knowledge from previous decisions.</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right: ownership -->
-      <div class="why-right reveal">
-        <span class="section-label">Data ownership</span>
-        <h2 class="h2" id="ownership-h2">The intelligence belongs to the customer.</h2>
-        <p class="ownership-body">Customers own their source data and the intelligence created from it—including datasets, evaluations, decision histories, relationships, conversations, corrections, context, and outcomes.</p>
-        <div class="ownership-highlight">Your company's accumulated intelligence remains your company's asset.</div>
-      </div>
-
+    <div class="ownership-solo reveal">
+      <span class="section-label">Data ownership</span>
+      <h2 class="h2" id="ownership-h2">The intelligence belongs to the customer.</h2>
+      <p class="ownership-body">Customers own their source data and the intelligence created from it—including datasets, evaluations, decision histories, relationships, conversations, corrections, context, and outcomes.</p>
+      <div class="ownership-highlight">Your company's accumulated intelligence remains your company's asset.</div>
     </div>
   </div>
 </section>

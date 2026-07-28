@@ -177,6 +177,15 @@ a:focus-visible, button:focus-visible {
   display: block;
   margin-bottom: 16px;
 }
+/* For labels containing brand name — preserves DecisionOS casing */
+.section-label-plain {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 16px;
+}
 .h2 {
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 500;
@@ -206,11 +215,22 @@ a:focus-visible, button:focus-visible {
 }
 .btn-ghost:hover { color: var(--fg); }
 
+/* ── SCROLL HINT ────────────────────────────────────────── */
+.scroll-hint {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(237,236,234,0.28);
+  pointer-events: none;
+}
+
 /* ── SECTION 1: HERO ────────────────────────────────────── */
 #hero {
   padding-top: var(--nav-h);
   display: flex;
   align-items: center;
+  position: relative;
 }
 .hero-inner {
   max-width: var(--max);
@@ -491,49 +511,20 @@ a:focus-visible, button:focus-visible {
   line-height: 1.5;
 }
 
-/* ── SECTION 4: WHY + OWNERSHIP ─────────────────────────── */
-.why-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: start;
-}
-.diff-sub {
-  font-size: 1rem;
-  color: var(--fg-2);
-  line-height: 1.7;
-  margin-bottom: 22px;
-}
-.diff-compact { border: 1px solid var(--border); }
-.diff-item {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-bottom: 1px solid var(--border);
-}
-.diff-item:last-child { border-bottom: none; }
-.diff-pattern {
-  padding: 18px 20px;
-  font-size: 0.9375rem;
-  color: rgba(237,236,234,0.48);
-  border-right: 1px solid var(--border);
-  line-height: 1.55;
-}
-.diff-approach {
-  padding: 18px 20px;
-  font-size: 0.9375rem;
-  color: var(--fg);
-  line-height: 1.55;
+/* ── SECTION 4: DATA OWNERSHIP ──────────────────────────── */
+.ownership-solo {
+  max-width: 640px;
 }
 .ownership-body {
-  font-size: 1rem;
+  font-size: 1.0625rem;
   color: var(--fg-2);
-  line-height: 1.75;
-  margin-bottom: 22px;
+  line-height: 1.78;
+  margin-bottom: 28px;
 }
 .ownership-highlight {
   border-left: 2px solid var(--accent);
-  padding: 4px 0 4px 16px;
-  font-size: 1.0625rem;
+  padding: 4px 0 4px 18px;
+  font-size: 1.125rem;
   font-weight: 500;
   color: var(--fg);
   line-height: 1.5;
@@ -679,11 +670,10 @@ footer {
 
 /* ── RESPONSIVE ─────────────────────────────────────────── */
 @media (max-width: 960px) {
-  .hero-inner    { grid-template-columns: 1fr; gap: 44px; padding: 48px 40px; }
-  .hero-h1       { font-size: clamp(2rem, 5vw, 3rem); }
+  .hero-inner     { grid-template-columns: 1fr; gap: 44px; padding: 48px 40px; }
+  .hero-h1        { font-size: clamp(2rem, 5vw, 3rem); }
   .context-layout { grid-template-columns: 1fr; gap: 36px; }
-  .context-model { margin-top: 0; }
-  .why-layout    { grid-template-columns: 1fr; gap: 48px; }
+  .context-model  { margin-top: 0; }
   .contact-layout { grid-template-columns: 1fr; gap: 40px; }
 }
 
@@ -695,10 +685,7 @@ footer {
   :root { --nav-h: 56px; }
   .container { padding: 0 24px; }
   .nav-inner  { padding: 0 24px; }
-  .nav-links  { display: none; }
-  .nav-cta    { display: none; }
-  .hamburger  { display: flex; }
-  #context, #applications, #why, #contact {
+  #context, #applications, #ownership, #contact {
     padding: calc(var(--nav-h) + 28px) 0 36px;
     justify-content: flex-start;
   }
